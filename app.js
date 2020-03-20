@@ -1,3 +1,5 @@
+const port = process.env.PORT || 3000;
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -88,6 +90,6 @@ app.use('/', routes);
 
 module.exports = router;
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("The Server has Started");
 });
