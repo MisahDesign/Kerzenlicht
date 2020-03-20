@@ -1,14 +1,16 @@
 <%- include partials/header.ejs %>
 
 <div class="banner guestbook_banner">
-    <p class="pricelist_banner_text">Gästebuch</p>
+    <div class="sub_banner">
+        <p class="pricelist_banner_text">Gästebuch</p>
+    </div>
 </div>
 <div class="container edit_section">
-<form action="/guestbook/<%=comment._id%>?_method=PUT" method="POST">
-    <textarea class="guestbook_textarea" type="text" name="comment"><%=comment.text %></textarea> 
-    <button class="button button_guestbook">Eintrag aktualisieren</button>
-</form>
-<a href="/guestbook" class="button button_guestbook">Zurück zum Gästebuch</a>
+    <form action="/guestbook/<%=comment._id%>?_method=PUT" method="POST">
+        <textarea class="guestbook_textarea" type="text" name="comment"><%=comment.text %></textarea>
+        <button class="button button_guestbook">Eintrag aktualisieren</button>
+    </form>
+    <a href="/guestbook" class="button button_guestbook">Zurück zum Gästebuch</a>
 </div>
 
 

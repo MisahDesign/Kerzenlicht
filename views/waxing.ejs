@@ -1,7 +1,9 @@
 <%- include partials/header.ejs %>
 
 <div class="banner waxing_banner">
-    <p class="pricelist_banner_text">Angebot</p>
+    <div class="sub_banner">
+        <p class="pricelist_banner_text">Angebot</p>
+    </div>
 </div>
 
 <div class="waxing_section intro_temp">
@@ -86,134 +88,141 @@
     </div>
 </div>
 
-<div class="massage_section intro_temp">
+<div class="massage_section intro_temp" id="massage_jump">
 
-        <h2 class="headline">Massage</h2>
-        <div class="container">
-            <p class="text container_solo text_space">In den letzten Jahren durfte ich verschiedene Massagetechniken lernen, welche ich dir hier kurz
-                    vorstellen möchte:</p>
-        </div>
-        <div id="container_cosmetic">
-            <div class="text">
-                <div class="cosmetic_wrapper">
-                    <img class="img_main img_cosmetics_one img_waxing" src="./assets/swedish.webp" alt="">
-                    <div class="seperator_icon seperator_cosmetic">
-                        <span class="icon_line line_top"></span>
-                        <img class="icon icon_outro icon_cosmetic" src="/assets/light3.png" alt="">
-                        <span class="icon_line line_bottom"></span>
-                    </div>
-                    <div class="cosmetic_text">
-                            <h1 class="bold">Schwedische Massage</h1>
-                            <p>Eine sanfte Ganzkörpermassage, ideal für Menschen die:
-                            </p>
-                            <ul class = "advice_list">
-                                <li>Massageanfänger sind</li>
-                                <li>Sehr verspannt sind</li>
-                                <li>Sensibel gegenüber Berührungen sind</li>
-                            </ul class = "advice_list">
-                            <p>Muskelverspannungen können hierbei sehr gut gelöst werden. Ausserdem eine sehr gute Wahl wenn es dein
-                                Ziel ist, zu entspannen
-                                <br><br>
-                                Für diese Massage wirst du deine Klamotten ablegen, bei Wunsch darf die Unterwäsche anbehalten
-                                werden. Während du auf dem Massagetisch liegst wird ein
-                                Tuch dich bedecken. Ich werde dann je nach bedarf und Körperstelle diese dann entfernen.
-                            </p>
-                            <p>Ich werde eine Kombination von aus folgenden Techniken benutzen:</p>
-                            <ul class = "advice_list">
-                                <li>Kneten</li>
-                                <li>Lange, fließende Massagebewegungen in Richtung Herz</li>
-                                <li>Tiefe kreißende Bewegungen</li>
-                                <li>Vibrationen und Klopfen</li>
-                                <li>Passive Bewegungen aus dem Handgelänk</li>
-                            </ul>
-                            <p>Üblicherweise dauert eine Massage etwa 60-90 Minuten</p>
-                    </div>
+    <h2 class="headline">Massage</h2>
+    <div class="container">
+        <p class="text container_solo text_space">In den letzten Jahren durfte ich verschiedene Massagetechniken lernen,
+            welche ich dir hier kurz
+            vorstellen möchte:</p>
+    </div>
+    <div id="container_cosmetic">
+        <div class="text">
+            <div class="cosmetic_wrapper">
+                <img class="img_main img_cosmetics_one img_waxing" src="./assets/swedish.webp" alt="">
+                <div class="seperator_icon seperator_cosmetic">
+                    <span class="icon_line line_top"></span>
+                    <img class="icon icon_outro icon_cosmetic" src="/assets/light3.png" alt="">
+                    <span class="icon_line line_bottom"></span>
                 </div>
-                <div class="cosmetic_wrapper_rev">
-                    <img class="img_main img_cosmetics_one img_waxing" src="./assets/hot_stone.webp" alt="">
-                    <div class="seperator_icon seperator_cosmetic">
-                        <span class="icon_line line_top"></span>
-                        <img class="icon icon_outro icon_cosmetic" src="/assets/light3.png" alt="">
-                        <span class="icon_line line_bottom"></span>
-                    </div>
-                    <div class="cosmetic_text">
-                            <h1 class="bold">Hot Stone Massage</h1>
-                            <p>Die Hot Stone Massage ist besonder gut geeignet für Menschen, die unter Muskelschmerzen leiden oder
-                                einfach nur entspannen möchten.
-                                Diese Art der therapeutischen Behandlung ähnelt sehr der schwedischen Massage bis auf den
-                                Unterschied, dass hier zusätzlich erhitzte Steine
-                                zusätzlich zu meinen Händen zum Einsatz kommen. Diese bewirken:
-                            </p>
-                            <ul class = "advice_list">
-                                <li>
-                                    Eine entspannen der Muskeln
-                                </li>
-                                <li>
-                                    Verbesserung der Blutzirkulation
-                                </li>
-                                <li>
-                                    Schmerzlinderung
-                                </li>
-                                <li>
-                                    Entspannung
-                                </li>
-                                <li>
-                                    Stress reduzierung
-                                </li>
-                                <p>Während der Massage währemd erhitzte Steine auf verschiedene Stellen deines Körpers platziert.
-                                    Eine Hot Stone Massage
-                                    wird unbekleidet vollführt, es sei denn natürlich du fühlst dich mit Wäsche wohler. Eine
-                                    typische Massage dauert hier in der Regel 90 min.
-                                </p>
-                            </ul>
-                    </div>
+                <div class="cosmetic_text">
+                    <h1 class="bold">Schwedische Massage</h1>
+                    <p>Eine sanfte Ganzkörpermassage, ideal für Menschen die:
+                    </p>
+                    <ul class="advice_list">
+                        <li>Massageanfänger sind</li>
+                        <li>Sehr verspannt sind</li>
+                        <li>Sensibel gegenüber Berührungen sind</li>
+                    </ul class="advice_list">
+                    <p>Muskelverspannungen können hierbei sehr gut gelöst werden. Ausserdem eine sehr gute Wahl wenn es
+                        dein
+                        Ziel ist, zu entspannen
+                        <br><br>
+                        Für diese Massage wirst du deine Klamotten ablegen, bei Wunsch darf die Unterwäsche anbehalten
+                        werden. Während du auf dem Massagetisch liegst wird ein
+                        Tuch dich bedecken. Ich werde dann je nach bedarf und Körperstelle diese dann entfernen.
+                    </p>
+                    <p>Ich werde eine Kombination von aus folgenden Techniken benutzen:</p>
+                    <ul class="advice_list">
+                        <li>Kneten</li>
+                        <li>Lange, fließende Massagebewegungen in Richtung Herz</li>
+                        <li>Tiefe kreißende Bewegungen</li>
+                        <li>Vibrationen und Klopfen</li>
+                        <li>Passive Bewegungen aus dem Handgelänk</li>
+                    </ul>
+                    <p>Üblicherweise dauert eine Massage etwa 60-90 Minuten</p>
                 </div>
-                <div class="cosmetic_wrapper">
-                    <img class="img_main img_cosmetics_one img_waxing" src="./assets/oil.webp" alt="">
-                    <div class="seperator_icon seperator_cosmetic">
-                            <span class="icon_line line_top"></span>
-                            <img class="icon icon_outro icon_cosmetic" src="/assets/light3.png" alt="">
-                            <span class="icon_line line_bottom"></span>
-                        </div>
-                    <div class="cosmetic_text">
-                            <h1 class="bold">Aromatherapie Massage</h1>
-                            <p>
-                                Aromatherapie Massagen eignen sich besonders gut für die, welche eine Emotional heilende Komponente
-                                haben möchten. Effekte einer solchen Massage sind:
-                            </p>
-                            <ul class = "advice_list">
-                                <li>
-                                    Besserung der Stimmung
-                                </li>
-                                <li>
-                                    Stress und Angst linderung
-                                </li>
-                                <li>
-                                    Reduzierung von Symptomen ausgelöst durch Depressionen
-                                </li>
-                                <li>
-                                    Lösen von Muskelverspannungen
-                                </li>
-                                <li>
-                                    Schmerzlinderung
-                                </li>
-                            </ul>
-                            <p>
-                                Bei Aromatherapie Massagen wird sanfter Druck ausgeübt zusammen mit dem Einsatz von essentiellen
-                                Ölen. Ich werde nach einem Beratungsgespräch
-                                die am besten geeigneten Öle für dich und deine Behandlung aussuchen, es sei den du hast bereits
-                                Favorisierte Öle.<br><br>
-                                Du erhälst eine Ganzkörpermassage, während du durch einen Diffusor und deiner Haut die belebenden
-                                Öle aufnimmst. Auch hier kann bei bedarf Unterwäsche anbehalten werden,
-                                wobei normalerweise hier ohne Klamotten massiert wird. Eine Massage dauert etwa 60 bis 90 Minuten.
-                            </p>
-                    </div>
+            </div>
+            <div class="cosmetic_wrapper_rev">
+                <img class="img_main img_cosmetics_one img_waxing" src="./assets/hot_stone.webp" alt="">
+                <div class="seperator_icon seperator_cosmetic">
+                    <span class="icon_line line_top"></span>
+                    <img class="icon icon_outro icon_cosmetic" src="/assets/light3.png" alt="">
+                    <span class="icon_line line_bottom"></span>
+                </div>
+                <div class="cosmetic_text">
+                    <h1 class="bold">Hot Stone Massage</h1>
+                    <p>Die Hot Stone Massage ist besonder gut geeignet für Menschen, die unter Muskelschmerzen leiden
+                        oder
+                        einfach nur entspannen möchten.
+                        Diese Art der therapeutischen Behandlung ähnelt sehr der schwedischen Massage bis auf den
+                        Unterschied, dass hier zusätzlich erhitzte Steine
+                        zusätzlich zu meinen Händen zum Einsatz kommen. Diese bewirken:
+                    </p>
+                    <ul class="advice_list">
+                        <li>
+                            Eine entspannen der Muskeln
+                        </li>
+                        <li>
+                            Verbesserung der Blutzirkulation
+                        </li>
+                        <li>
+                            Schmerzlinderung
+                        </li>
+                        <li>
+                            Entspannung
+                        </li>
+                        <li>
+                            Stress reduzierung
+                        </li>
+                        <p>Während der Massage währemd erhitzte Steine auf verschiedene Stellen deines Körpers
+                            platziert.
+                            Eine Hot Stone Massage
+                            wird unbekleidet vollführt, es sei denn natürlich du fühlst dich mit Wäsche wohler. Eine
+                            typische Massage dauert hier in der Regel 90 min.
+                        </p>
+                    </ul>
+                </div>
+            </div>
+            <div class="cosmetic_wrapper">
+                <img class="img_main img_cosmetics_one img_waxing" src="./assets/oil.webp" alt="">
+                <div class="seperator_icon seperator_cosmetic">
+                    <span class="icon_line line_top"></span>
+                    <img class="icon icon_outro icon_cosmetic" src="/assets/light3.png" alt="">
+                    <span class="icon_line line_bottom"></span>
+                </div>
+                <div class="cosmetic_text">
+                    <h1 class="bold">Aromatherapie Massage</h1>
+                    <p>
+                        Aromatherapie Massagen eignen sich besonders gut für die, welche eine Emotional heilende
+                        Komponente
+                        haben möchten. Effekte einer solchen Massage sind:
+                    </p>
+                    <ul class="advice_list">
+                        <li>
+                            Besserung der Stimmung
+                        </li>
+                        <li>
+                            Stress und Angst linderung
+                        </li>
+                        <li>
+                            Reduzierung von Symptomen ausgelöst durch Depressionen
+                        </li>
+                        <li>
+                            Lösen von Muskelverspannungen
+                        </li>
+                        <li>
+                            Schmerzlinderung
+                        </li>
+                    </ul>
+                    <p>
+                        Bei Aromatherapie Massagen wird sanfter Druck ausgeübt zusammen mit dem Einsatz von essentiellen
+                        Ölen. Ich werde nach einem Beratungsgespräch
+                        die am besten geeigneten Öle für dich und deine Behandlung aussuchen, es sei den du hast bereits
+                        Favorisierte Öle.<br><br>
+                        Du erhälst eine Ganzkörpermassage, während du durch einen Diffusor und deiner Haut die
+                        belebenden
+                        Öle aufnimmst. Auch hier kann bei bedarf Unterwäsche anbehalten werden,
+                        wobei normalerweise hier ohne Klamotten massiert wird. Eine Massage dauert etwa 60 bis 90
+                        Minuten.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-<div class="cosmetic_section intro_temp">
+<div class="cosmetic_section intro_temp" id="cosmetic_jump">
 
     <h2 class="headline">Kosmetik</h2>
     <div class="container">
@@ -286,7 +295,7 @@
 
                         die auf Haut und Haarton abgestimmte Farbpigmente in die
 
-                        oberste Hautschicht eingebracht. Wir verwenden hochwertigste,
+                        oberste Hautschicht eingebracht. Ich verwende hochwertigste,
 
                         reinheitszertifizierte Farben mit hoher Farbpigmentdichte
 

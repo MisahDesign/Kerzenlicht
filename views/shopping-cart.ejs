@@ -1,57 +1,64 @@
 <% include partials/header %>
 <div class="banner cart_banner">
-    <p class="pricelist_banner_text">Shop</p>
+    <div class="sub_banner">
+        <p class="pricelist_banner_text">Einkaufswagen</p>
+    </div>
 </div>
 <div class="cart_section intro_temp">
-  
-        <% if(products.length > 0) { %>
 
-            <% debugger; %>
-        <% products.forEach(function(product){ %>
-        <div class="shop_product">
-            <div class="shop_product_display">
-                <img class="img_product" src="<%= product.item.image  %>">
-                <p class="shop_basis_name"><%= product.item.name  %></p>
-            </div>
-            <p class="shop_basis"><%= product.price / 100 %> €</p>
-            <p class="shop_basis"> <%= product.qty %> X</p>
+    <% if(products.length > 0) { %>
 
-            <div>
-
-                <ul class="shop_buttons">
-                        <a href="/reduce/<%= product.item._id %>"><li class="button shopping_button">Um 1 Reduzieren</li></a>
-                        <a href="/remove/<%= product.item._id %>"><li class="button shopping_button">Alle Entfernen</li></a>
-                </ul>
-            </div>
+    <% debugger; %>
+    <% products.forEach(function(product){ %>
+    <div class="shop_product">
+        <div class="shop_product_display">
+            <img class="img_product" src="<%= product.item.image  %>">
+            <p class="shop_basis_name"><%= product.item.name  %></p>
         </div>
-        <% }); %>
-            <div class="total_price">
-                    <div>
-                        <strong>Gesamt:</strong>
-                    </div>
-                    <div>
-                        <strong><%= totalPrice / 100 %> €</strong>
-                    </div>
-                    <div>
-                        <a id="purchase" type="button" href="/checkout" class="button shopping_button checkout_button">Einkauf Abschließen</a>
-                    </div>
-        
-        
-                </div>
-                
-       
-        
-        
+        <p class="shop_basis"><%= product.price / 100 %> €</p>
+        <p class="shop_basis"> <%= product.qty %> X</p>
 
-        <% } else { %>
-        <p class="text no_items">Es befinden sich keine Artikel in deinem Einkaufswagen.</p>
-        <a href="/shop" class="button ">Zurück zum Shop</a>
-        <% } %>
+        <div>
+
+            <ul class="shop_buttons">
+                <a href="/reduce/<%= product.item._id %>">
+                    <li class="button shopping_button">Um 1 Reduzieren</li>
+                </a>
+                <a href="/remove/<%= product.item._id %>">
+                    <li class="button shopping_button">Alle Entfernen</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <% }); %>
+    <div class="total_price">
+        <div>
+            <strong>Gesamt:</strong>
+        </div>
+        <div>
+            <strong><%= totalPrice / 100 %> €</strong>
+        </div>
+        <div>
+            <a id="purchase" type="button" href="/checkout" class="button shopping_button checkout_button">Einkauf
+                Abschließen</a>
+        </div>
+
+
+    </div>
 
 
 
 
-  
+
+    <% } else { %>
+    <p class="text no_items">Es befinden sich keine Artikel in deinem Einkaufswagen.</p>
+    <a href="/shop" class="button ">Zurück zum Shop</a>
+    <% } %>
+
+
+
+
+
 </div>
 
 <% include partials/footer %>

@@ -1,13 +1,15 @@
 <%- include partials/header.ejs %>
 
 <div class="banner guestbook_banner">
-    <p class="pricelist_banner_text">Gästebuch</p>
+    <div class="sub_banner">
+        <p class="pricelist_banner_text">Gästebuch</p>
+    </div>
 </div>
 <div class="guestbook_section">
     <div class="intro_temp container">
         <h2 class="headline">Hinterlasse eine Nachricht!</h2>
         <% if(!currentUser){ %>
-        <p class="text">Bitte Melde dich zuerst an, um einen Gästebucheintrag zu verfassen.</p>
+        <p class="text advice_list">Bitte Melde dich zuerst an, um einen Gästebucheintrag zu verfassen.</p>
         <a class="button" href="user/login">Anmelden</a>
         <% } else { %>
         <form class="guestbook_form" action="/guestbook" method="POST">

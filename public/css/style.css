@@ -340,7 +340,7 @@ Hero Slider - by CodyHouse.co
 .cd-hero__btn {
   padding: 1.2em 1.4em;
   margin-top: .8em;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
   color: floralwhite;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -372,6 +372,29 @@ Hero Slider - by CodyHouse.co
 
 .cd-hero__content.cd-hero__content--full-width.cd-hero__content-top {
   padding-top: 220px;
+}
+
+.hero_content_four {
+  padding-top: 23vh !important;
+}
+
+
+@media only screen and (max-height: 681px) {
+  .cd-hero__content.cd-hero__content--full-width.cd-hero__content-top {
+    padding-top: 100px;
+  }
+
+  .cd-hero__content.cd-hero__content--half-width.hero_content_three {
+    padding-top: 16vh;
+  }
+
+  .hero_content_four {
+    padding-top: 12vh !important;
+  }
+
+  .hero_content_five {
+    padding-top: 56px !important;
+  }
 }
 
 .hr_seperator {

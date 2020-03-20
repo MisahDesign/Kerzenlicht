@@ -1,16 +1,12 @@
 <%- include partials/header.ejs %>
 
 <div class="banner login_banner">
-    <p class="pricelist_banner_text">Anmelden</p>
+    <div class="sub_banner">
+        <p class="pricelist_banner_text">Anmelden</p>
+    </div>
 </div>
 
-
-<!-- <form action="/login" method="post">
-    <input type="text" name="username" placeholder="Benutzername">
-    <input type="password" name="password" paceholder="Passwort">
-    <button>Login</button>
-</form> -->
-
+<div class="container">
 <% if (hasErrors){ %>
     <div class="form_alert">
     
@@ -36,4 +32,6 @@
       </form>
     </div>
   </div>
+</div>
+
 <%- include partials/footer.ejs %>

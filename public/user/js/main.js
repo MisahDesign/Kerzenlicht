@@ -14,7 +14,7 @@
 		this.oldSlideIndex = 0;
 		this.autoplay = hasClass(this.element, "js-cd-autoplay");
 		this.autoPlayId;
-		this.autoPlayDelay = 80000;
+		this.autoPlayDelay = 4000;
 		this.init();
 	};
 

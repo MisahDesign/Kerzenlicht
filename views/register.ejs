@@ -1,12 +1,12 @@
-
-
 <%- include partials/header.ejs %>
 
 <div class="banner login_banner">
-    <p class="pricelist_banner_text">Registrieren</p>
+    <div class="sub_banner">
+        <p class="pricelist_banner_text">Registrieren</p>
+    </div>
 </div>
 
-
+<div class="container">
 <% if (hasErrors){ %>
 <div class="form_alert">
 
@@ -20,10 +20,10 @@
       <form class="login-form" action="/user/register" method="post">
         <input type="text" name="username" placeholder="Benutzername"/>
         <input type="password" name="password" placeholder="Passwort"/>
-        <!-- <input type="text" placeholder="Email Adresse"/> -->
         <button class="button">Registrieren</button>
         <p class="message">Bereits registriert? <a href="/user/login">Hier Anmelden</a></p>
       </form>
     </div>
   </div>
+</div>
 <%- include partials/footer.ejs %>

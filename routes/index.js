@@ -207,7 +207,6 @@ router.post("/checkout", async function (req, res, next) {
   if (!req.session.cart) {
     return res.redirect("/shopping-cart");
   }
-  // You can return promise directly
   let cart = new Cart(req.session.cart);
   let customerId = {};
 
@@ -306,13 +305,12 @@ router.post("/checkout", async function (req, res, next) {
 
 
   try {
-    const customerId = await createCustomer(); // promise 1
+    const customerId = await createCustomer();
     debugger;
     const tokenId = await createToken();
     debugger;
-    const addedCardToCustomer = await addCardToCustomer(tokenId, customerId); // await addCardToCustomer(createdCustumer); to pass created customer info to next request
-    const chargedCustomerThroughCustomerID = await chargeCustomerThroughCustomerID(customer); // promise 3
-    // more things...
+    const addedCardToCustomer = await addCardToCustomer(tokenId, customerId); 
+    const chargedCustomerThroughCustomerID = await chargeCustomerThroughCustomerID(customer);
 
     res.redirect("/success");
 
@@ -327,14 +325,13 @@ router.post("/checkout", async function (req, res, next) {
 
 
 
-// or use async /await
 let chargeCustomerThroughCustomerID = async function () {
 
   const data = await stripe.charges.create(param).catch((e) => {
     console.log(`error ${e}`);
     throw e
   })
-  // do something with data
+
 
   return data;
 
@@ -345,269 +342,11 @@ let chargeCustomerThroughTokenID = async function () {
     console.log(`error ${e}`);
     throw e
   });
-  // do something with data
+
 
   return data;
 
 }
-
-
-
-
-// var cart = new Cart(req.session.cart);
-// (async () => {
-//   const session = await stripe.checkout.sessions.create({
-//     payment_method_types: ['card'],
-//     line_items: [{
-//       name: 'T-shirt',
-//       description: 'Comfortable cotton t-shirt',
-//       images: ['https://example.com/t-shirt.png'],
-//       amount: 500,
-//       currency: 'eur',
-//       quantity: 1,
-//     }],
-//     success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
-//     cancel_url: 'https://example.com/cancel',
-//   });
-// })();
-
-
-
-
-
-
-
-// var param = {};
-// param.email = req.body.email;
-// param.name = req.body.name;
-// param.description = "new purchase";
-
-
-
-
-
-// var param_charge = {};
-// param_charge.amount = cart.totalPrice;
-// param_charge.currency = 'eur';
-// param_charge.description = 'First payment';
-
-// var param = {};
-// param.email = req.body.email;
-// param.name = req.body.name;
-// param.description = "I am the description";
-
-
-// param_card = {};
-// param_card ={
-//   number: req.body.card,
-//   exp_month: req.body.expire_month,
-//   exp_year: req.body.expire_year,
-//   cvc: req.body.security
-// }
-
-// let createCustomer = function () {
-
-//   return new Promise((resolve, reject) => {
-//   stripe.customers.create(param, function (err, customer) {
-//     if (err) {
-//       console.log("err:" + err);
-//       reject();
-//     }
-//     if (customer) {
-//       console.log("success: " + JSON.stringify(customer, null, 2));
-//       param.customer = customer.id;
-
-//       resolve();
-//     } else {
-//       console.log("something went wrong");
-//     }
-//   });
-// })};
-
-
-// // createCustomer();
-
-// let createToken = function () {
-
-//   // return new Promise((resolve, reject) => {
-//     stripe.tokens.create(param_card, function (err, token) {
-//       if (err) {
-//         console.log("err:" + err);
-//         console.log(param_card);
-//         // reject();
-//       }
-//       if (token) {
-//         console.log("success: " + JSON.stringify(token, null, 2));
-//         param.tokenId = token.id;
-//         // resolve();
-//       } else {
-//         console.log("something went wrong");
-//       }
-//     });
-//   };
-
-
-
-
-
-
-
-// let retrieveCustomer = function () {
-//   stripe.customers.retrieve("cus_Gr83WnHukPgD90", function (err, customer) {
-//     if (err) {
-//       console.log("err:" + err);
-//     }
-//     if (customer) {
-//       console.log("success: " + JSON.stringify(customer, null, 2));
-//     } else {
-//       console.log("something went wrong");
-//     }
-//   });
-// }
-
-// // retrieveCustomer();
-
-
-// let addCardToCustomer = function () {
-//   stripe.customers.createSource(param.customer, {
-//     source: param.tokenId
-//   }, function (err, card) {
-//     if (err) {
-//       console.log("err:" + err);
-//       console.log(param);
-//     }
-//     if (card) {
-//       console.log("success: " + JSON.stringify(card, null, 2));
-//     } else {
-//       console.log("something went wrong");
-//     }
-//   });
-// };
-
-// let chargeCustomerThroughCustomerID = function () {
-
-//   let param = {
-//     amount: cart.totalPrice,
-//     currency: 'eur',
-//     description: 'First payment',
-//     customer: customer.id
-//   }
-
-//   stripe.charges.create(param, function (err, charge) {
-//     if (err) {
-//       console.log("err: " + err);
-//     }
-//     if (charge) {
-//       console.log("success: " + JSON.stringify(charge, null, 2));
-//     } else {
-//       console.log("Something wrong")
-//     }
-//   })
-// }
-// //chargeCustomerThroughCustomerID();
-
-// let chargeCustomerThroughTokenID = function () {
-
-//   let param = {
-//     amount: cart.totalPrice,
-//     currency: 'eur',
-//     description: 'First payment',
-//     source: token.id
-//   }
-
-//   stripe.charges.create(param, function (err, charge) {
-//     if (err) {
-//       console.log("err: " + err);
-//     }
-//     if (charge) {
-//       console.log("success: " + JSON.stringify(charge, null, 2));
-//     } else {
-//       console.log("Something wrong")
-//     }
-//   })
-// }
-
-// createCustomer().then(createToken).then(addCardToCustomer).catch(err => console.log(err));
-
-
-//     stripe.tokens.create(param_card, function(err, token){
-//       if(err) {
-//         console.log("err:" + err);
-//       } if(token) {
-//         console.log("success: "+ JSON.stringify(token, null, 2));
-//         param.source = token.id;
-//         console.log(param);
-
-//       } else {
-//         console.log("error token create");
-//       }
-//     });
-//     stripe.customers.create(param, function(err, customer){
-//       if(err) {
-//         console.log("err:" + err);
-//       } if(customer) {
-//         console.log("success: "+ JSON.stringify(customer, null, 2));
-//         param.customer = customer.id;
-//         param_charge.customer = customer.id;
-//       } else {
-//         console.log("error customer create");
-//       }
-//     })
-
-//     .then (customer  => stripe.customers.createSource(customer.id,{source:param.source},function(err, card){
-//       if(err) {
-//         console.log("err:" + err);
-//         console.log(param);
-//         console.log(param.source);
-//       } if(card) {
-//         console.log("success: "+ JSON.stringify(card, null, 2));
-//         console.log(param_charge);
-//       } else {
-//         console.log("error source create");
-//       }
-//     }))
-//     .then ( card => stripe.charges.create(param.customer, function (err,charge) {
-//       if(err)
-//       {
-//           console.log("err: "+err);
-//       }if(charge)
-//       {
-//           console.log("success: "+JSON.stringify(charge, null, 2));
-//       }else{
-//           console.log("Something wrong")
-//       }
-//   }))
-//   .catch((err) => {
-//     console.log(err);
-//   });
-
-
-
-
-
-
-
-
-// stripe.charges.create({
-//   amount: cart.totalPrice * 100,
-//   currency: "eur",
-//   source: req.body.stripeToken,
-//   description: "Test Charge"
-// }, function(err, charge) {
-//   if (err) {
-//     req.flash("error", err.message);
-//     return res.redirect("/checkout")
-//   }
-//   req.flash("success", "Successfully purchased a product!");
-//   req.cart = null;
-//   res.redirect("/shopping-cart");
-// });
-
-
-
-
-
-
 
 
 
