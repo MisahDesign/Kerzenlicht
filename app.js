@@ -23,7 +23,7 @@ const csrfProtection = csrf();
 
 // ROUTES
 const routes = require('./routes/index');
-const userRoutes = require('./routes/user');
+// const userRoutes = require('./routes/user');
 
 const MongoClient = require('mongodb').MongoClient;
 mongoose.connect("mongodb+srv://misah:w9AcfjsFakqkD3wq@cluster0-lygfd.mongodb.net/test?retryWrites=true&w=majority", {
@@ -80,7 +80,7 @@ app.use(function (req, res, next) {
 });
 
 
-app.use('/user', userRoutes);
+// app.use('/user', userRoutes);
 app.use('/', routes);
 
 

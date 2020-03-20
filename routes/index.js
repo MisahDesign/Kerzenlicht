@@ -13,6 +13,7 @@ const Product = require("../models/product");
 const Comment = require("../models/comments");
 const Cart = require("../models/cart");
 const middleware = require("../middleware");
+const passport = require('passport');
 const stripe = require('stripe')(stripeSecretKey);
 
 
@@ -347,6 +348,54 @@ let chargeCustomerThroughTokenID = async function () {
   return data;
 
 }
+
+// USERROUTES
+
+router.get("/profile", middleware.isLoggedIn, function(req, res){
+  res.render("profile.ejs");
+});
+
+// LOGOUT LOGIC 
+router.get("/logout", middleware.isLoggedIn, function (req, res){
+  req.logout();
+  res.redirect("/");
+});
+
+router.use('/', middleware.notLoggedIn, function(req, res, next){
+  next();
+});
+
+router.get("/register", function(req, res){
+  var messages = req.flash('error');
+  res.render("register.ejs", {messages: messages, hasErrors: messages.length > 0});
+});
+
+
+
+router.post("/register", passport.authenticate('local.signup', {
+  successRedirect: '/profile',
+  failureRedirect: '/register',
+  failureFlash: true
+}));
+
+
+
+// LOGIN FORM
+router.get("/login", function(req, res){
+  var messages = req.flash('error');
+  res.render("login.ejs", {messages: messages, hasErrors: messages.length > 0});
+});
+
+
+
+//  LOGIN LOGIC
+router.post("/login", passport.authenticate("local.signin",
+  {
+    successRedirect: "/profile",
+    failureRedirect: "/login",
+    failureFlash: true
+  }));
+
 
 
 
