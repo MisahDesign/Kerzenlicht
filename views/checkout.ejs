@@ -1,0 +1,87 @@
+<% include partials/header %>
+<script>
+     var stripePublicKey = '<%= stripePublicKey %>';
+     var cart = '<%= cart %>';
+</script>
+
+<div class="banner cart_banner">
+  <p class="pricelist_banner_text">Shop</p>
+</div>
+<div class="checkout_section">
+
+    <div class="wrapper_checkout">
+        <div class="container_checkout">
+            <h4 class="totalPrice">Gesamtbetrag: EUR <%=total / 100%></h4>
+           
+            <form class="checkout_form"  action="/checkout" method="post"  id="checkout_form_ref">
+                <h1 class="checkout_header">
+                    <i class="fas fa-shipping-fast"></i>
+                    Zustellungsinformationen
+                </h1>
+                <div class="name">
+                    <div class="checkout_div">
+                        <label for="name">Name des Kreditkarteninhabers</label>
+                        <input class="checkout_input" type="text" id="name" name="name" required>
+                    </div>
+                </div>
+                <div class="name">
+                        <div class="checkout_div">
+                            <label for="name">Email Adresse</label>
+                            <input class="checkout_input" type="text" id="email" name="email" required>
+                        </div>
+                    </div>
+                <div class="street">
+                    <label for="address">Straße</label>
+                    <input class="checkout_input" type="text" id="address" name="address">
+                </div>
+                <div class="address-info">
+                    <div class="checkout_div">
+                        <label for="city">Stadt</label>
+                        <input class="checkout_input" type="text" id="city" name="city">
+                    </div>
+                    <div class="checkout_div">
+                        <label for="state">Bundesland</label>
+                        <input class="checkout_input" type="text" id="state" name="state">
+                    </div>
+                    <div class="checkout_div">
+                        <label for="zip">Postleitzahl</label>
+                        <input class="checkout_input" type="text" id="zip" name="zip">
+                    </div>
+                </div>
+                <h1>
+                    <i class="far fa-credit-card"></i> Zahlungsinformationen
+                </h1>
+                <div class="cc-num">
+                    <label for="card">Kreditkartennummer</label>
+                    <input class="checkout_input" type="text" id="card" name="card">
+                </div>
+                <div class="cc-info">
+                    <div class="checkout_div">
+                        <label for="exp_month">Gültig bis Monat</label>
+                        <input class="checkout_input" type="text" id="exp_month" name="exp_month">
+                    </div>
+                     <div class="checkout_div">
+                        <label for="exp_year">Gültig bis Jahr</label>
+                        <input class="checkout_input" type="text" id="exp_year" name="exp_year">
+                    </div>
+                    <div class="checkout_div">
+                        <label for="security">CVC</label>
+                        <input class="checkout_input" type="text" id="cvc" name="security">
+                    </div>
+                </div>
+                <div class="btns">
+                    <button id="pay" class="button product_button">Jetzt Bezahlen</button>
+                    <a class="button product_button" href="/shopping-cart">Zurück zum Einkaufswagen</a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+  </div>
+
+
+
+  <!-- <script src="/js/checkout.js"></script> -->
+  <% include partials/footer %>
+
+ 

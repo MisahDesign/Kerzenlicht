@@ -1,0 +1,41 @@
+<%- include partials/header.ejs %>
+
+<div class="banner guestbook_banner">
+    <p class="pricelist_banner_text">Gästebuch</p>
+</div>
+<div class="guestbook_section">
+    <div class="intro_temp container">
+        <h2 class="headline">Hinterlasse eine Nachricht!</h2>
+        <% if(!currentUser){ %>
+        <p class="text">Bitte Melde dich zuerst an, um einen Gästebucheintrag zu verfassen.</p>
+        <a class="button" href="user/login">Anmelden</a>
+        <% } else { %>
+        <form class="guestbook_form" action="/guestbook" method="POST">
+            <textarea class="guestbook_textarea" type="text" name="comment"
+                placeholder="Verfasse einen Gästebucheintrag"></textarea>
+            <button class="button button_guestbook">Eintrag erstellen</button>
+        </form>
+        <% } %>
+    </div>
+
+    <div class="guestbook_container ">
+        <% comment.forEach(function(comment){ %>
+        <div class="guestbook_card">
+            <p class="highlight_t"><%= comment.author.username %></p>
+            <p class="comment"><%= comment.text %></p>
+            <p class="date"><%= moment(comment.date).format("Do MMM YYYY")  %></p>
+            <%if(currentUser && comment.author.id.equals(currentUser._id)){%>
+            <a href="/guestbook/<%=comment._id%>/edit">Bearbeiten</a>
+            <form action="/guestbook/<%=comment._id%>?_method=DELETE" method="POST">
+                <button class="button_delete">Löschen</button>
+            </form>
+            <% } %>
+        </div>
+        <div class="seperator_icon">
+            <img class="icon icon_outro icon_guestbook" src="/assets/light3.png" alt="">
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include partials/footer.ejs %>

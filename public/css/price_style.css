@@ -1,0 +1,51 @@
+.pricelist_banner {
+    height: 35vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url("../assets/studio.jfif");
+    background-position: center;
+    border-bottom: 60px solid rgba(225, 159, 92, 0.4);
+    background-repeat: no-repeat;
+    
+    
+}
+
+.pricelist_banner_text {
+    padding-top: 30vh;
+    margin: 0 auto;
+    width: 200px;
+    font-family: belleza;
+    font-size: 2em;
+    color: cornsilk;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pricelist_table {
+    background-color:  rgba(209, 184, 159, 0.4);
+}
+
+th, td {
+    border-bottom: 1px solid rgb(10, 1, 1);
+    font-family: belleza;
+    padding: 15px;
+    width: 30%;
+  }
+
+th {
+    text-align: left;
+    background-color: rgba(36, 189, 192, 0.4);
+    
+}
+
+tr:hover {background-color: cornsilk;}
+
+td {
+    height: 60px;
+    vertical-align: bottom;
+  }
+
+table {
+    width: 100%;
+}
+

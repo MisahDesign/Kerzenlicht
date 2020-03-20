@@ -1,0 +1,61 @@
+<% include partials/header %>
+
+<div class="banner shop_banner">
+    <p class="pricelist_banner_text">Shop</p>
+</div>
+
+<div class="shopping_section">
+  
+    <a class="button cart_button" href="/shopping-cart"><i class="fas fa-shopping-cart"></i><span class="badge">
+            <%= totalQty %>
+        </span></a>
+    <div class="container intro_temp">
+        <h2 class="headline">Willkommen in meinem Online Shop!</h2>
+        <p class="text container_solo">
+            Egal ob du neue Produkte, inzwischen bei meinen Behandlungen einen Produkt Favorit gefunden hast oder
+            einfach
+            einem geliebten Menschen ein Geschenk machen möchtest.
+            Hier kannst du aus einem Katalog von Produkten wählen, welche ich alle ausgiebig getestest habe und ich voll
+            und
+            ganz dahinter stehen kann.
+        </p>
+    </div>
+
+
+
+
+    <div class="product_container">
+
+        <% products.forEach(function(product){ %>
+
+
+        <div class="product_card">
+            <img src="<%= product.image %>" class=" img_product" alt="">
+            <div class="product_main">
+                <h2 class="product_name"><%= product.name %></h2>
+                <p class="product_info"><%= product.info %></p>
+            </div>
+            <div class="seperator_icon">
+                <img class="icon icon_outro icon_shop" src="/assets/light3.png" alt="">
+            </div>
+            <div class="product_sidebar">
+                <ul class="product_data">
+                    <li><%= product.price / 100 %> €</li>
+                    <li><a class="button product_button" href="<%=/add-to-cart/%><%= product._id %>">In den
+                            Warenkorb</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <% }); %>
+
+    </div>
+    <div class="seperator_icon">
+
+
+    </div>
+
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,37 @@
+<%- include partials/header.ejs %>
+
+<div class="contact_banner banner">
+  <p class="pricelist_banner_text">Kontakt</p>
+</div>
+
+<div class="contact_section ">
+
+  <div class="container">
+    <form id="contact" action="" method="post">
+      <h3>Kontaktformular</h3>
+      <h4>Schreibe mir bequem eine Terminanfrage oder Nachricht</h4>
+      <fieldset>
+        <input placeholder="Vor- und Nachname" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Emailadresse" type="email" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Telefonnummer" type="tel" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Gewünschter Termin (Optional)" type="text" tabindex="4">
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Deine Nachticht an mich" tabindex="5"></textarea>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" class="button" data-submit="...Sending">Senden</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <p class="container text contact_text">Untenstehend findest du auch andere Möglichkeiten mich zu kontaktieren. Ich
+    freue mich über deine Nachricht!</p>
+
+  <%- include partials/footer.ejs %>
