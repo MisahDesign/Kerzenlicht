@@ -1449,7 +1449,6 @@ fieldset {
 
 #contact button[type="submit"] {
   cursor: pointer;
-  width: 10%;
   border: none;
   background: darkturquoise;
   color: #FFF;
