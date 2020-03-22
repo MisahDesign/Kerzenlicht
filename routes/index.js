@@ -324,31 +324,6 @@ router.post("/checkout", async function (req, res, next) {
 });
 
 
-
-
-let chargeCustomerThroughCustomerID = async function () {
-
-  const data = await stripe.charges.create(param).catch((e) => {
-    console.log(`error ${e}`);
-    throw e
-  })
-
-
-  return data;
-
-}
-let chargeCustomerThroughTokenID = async function () {
-
-  const data = await stripe.charges.create(param).catch((e) => {
-    console.log(`error ${e}`);
-    throw e
-  });
-
-
-  return data;
-
-}
-
 // USERROUTES
 
 router.get("/profile", middleware.isLoggedIn, function(req, res){

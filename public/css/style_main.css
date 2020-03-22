@@ -1070,6 +1070,18 @@ div.gallery {
 
 /* LOGIN */
 
+.profile_section {
+  height: 50vh;
+}
+
+.profile_buttons {
+  padding-top: 2vh;
+}
+
+.profile_container {
+  padding-top: 13vh;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {

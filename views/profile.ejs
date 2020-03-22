@@ -6,4 +6,14 @@
     </div>
 </div>
 
+<div class="profile_section">
+    <div class="container intro_temp profile_container">
+        <p class="text">Vielen Dank das du dich angemeldet hast, <%= currentUser.username %>!</p>
+        <div class="profile_buttons">
+            <a class="button" href="/home">Zurück zur Startseite</a>
+            <a class="button" href="/guestbook">Zum Gästebuch</a>
+        </div>
+    </div>
+</div>
+
 <%- include partials/footer.ejs %>
